@@ -1,6 +1,5 @@
 # ===================================
 # Python Sets - Concepts and Examples
-# Reference: Shradha Khapra YouTube + Official Docs
 # ===================================
 
 print("===== 1. What is a Set? =====")
@@ -41,7 +40,7 @@ s.discard(10)
 print("After discard(10) - no effect:", s)
 
 # Pop element (removes and returns arbitrary element)
-popped = s.pop()
+popped = s.pop() # remove and return any element from set or error if set is empty
 print("After pop():", s, "| Popped element:", popped)
 
 print("\n===== 4. Set Operations =====")
@@ -62,7 +61,7 @@ print("Symmetric difference:", set1.symmetric_difference(set2))  # or set1 ^ set
 print("\n===== 5. Set Membership & Length =====")
 print("Is 2 in set1?", 2 in set1)  # True
 print("Is 10 in set1?", 10 in set1)  # False
-print("Length of set1:", len(set1))
+print("Length of set1:", len(set1)) # o/p => Length of set1: 3
 
 print("\n===== 6. Set Methods Summary =====")
 print("Methods: add(), remove(), discard(), pop(), clear(), union(), intersection(), difference(), symmetric_difference(), issubset(), issuperset(), isdisjoint(), copy()")
@@ -70,9 +69,9 @@ print("Methods: add(), remove(), discard(), pop(), clear(), union(), intersectio
 # Check subset, superset and disjoint
 A = {1, 2, 3}
 B = {1, 2, 3, 4, 5}
-print("A is subset of B?", A.issubset(B))
-print("B is superset of A?", B.issuperset(A))
-print("A and B are disjoint?", A.isdisjoint(B))
+print("A is subset of B?", A.issubset(B)) # o/p => A is subset of B? True
+print("B is superset of A?", B.issuperset(A)) # o/p => B is superset of A? False
+print("A and B are disjoint?", A.isdisjoint(B)) # o/p => A and B are disjoint? False
 
 print("\n===== 7. Important notes =====")
 print("- No duplicates allowed")

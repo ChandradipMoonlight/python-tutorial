@@ -26,18 +26,21 @@ print("After changing 2nd element:", my_list) # o/p => After changing 2nd elemen
 
 # Example 5: List methods
 my_list.append("New")          # Add to end
-print("After append:", my_list) # o/p => 
+print("After append:", my_list) # o/p => After append: [10, 20, 30, 'Python', 25.5, 'New']
 my_list.insert(2, "Insert")    # Insert at index 2
-print("After insert:", my_list)
+print("After insert:", my_list) # o/p => After insert: [10, 20, 'Insert', 30, 'Python', 25.5, 'New']
 my_list.remove("Python")       # Remove by value
-print("After remove 'Python':", my_list)
+print("After remove 'Python':", my_list) # o/p => After remove 'Python': [10, 20, 'Insert', 30, 25.5, 'New']
 popped_item = my_list.pop()    # Remove last item
-print("After pop:", my_list, ", Popped:", popped_item)
+print("After pop:", my_list, ", Popped:", popped_item) # o/p => After pop: [10, 20, 'Insert', 30, 25.5] , Popped: New
 print("List length:", len(my_list))  # Length of list
 
 # Example 6: Looping through a list
 for item in my_list:
     print("Item:", item)
+
+for index in range(len(my_list)):
+    print(index, my_list[index]) # o/p => 0 10 1 20 2 Insert 3 30 4 25.5 5 New
 
 print("\n======== 2. Tuple Concept and Examples ========\n")
 
@@ -51,27 +54,27 @@ my_tuple = (10, 20, 30, "Python", 25.5)
 print("Tuple:", my_tuple)
 
 # Example 8: Accessing elements (zero-based indexing)
-print("First element:", my_tuple[0])
-print("Last element:", my_tuple[-1])
+print("First element:", my_tuple[0]) # o/p => First element: 10
+print("Last element:", my_tuple[-1]) # o/p => Last element: 25.5
 
 # Example 9: Slicing a tuple
-print("Slice [1:4]:", my_tuple[1:4])
+print("Slice [1:4]:", my_tuple[1:4]) # o/p => Slice [1:4]: (20, 30, "Python")
 
 # Example 10: Tuple is immutable (cannot change elements)
 try:
-    my_tuple[1] = 99  # Will raise an error
+    my_tuple[1] = 99  # Will raise an error , error => TypeError: 'tuple' object does not support item assignment
 except TypeError as e:
     print("Cannot modify a tuple:", e)
 
 print("\n======== 3. Tuple Methods and Iteration ========\n")
 
-# Example 11: Tuple methods (only count and index)
-print("Count of 30:", my_tuple.count(30))
-print("Index of 'Python':", my_tuple.index("Python"))
+# Example 11: Tuple methods (only count and index) 
+print("Count of 30:", my_tuple.count(30)) # o/p => Count of 30: 1
+print("Index of 'Python':", my_tuple.index("Python")) # o/p => Index of 'Python': 3
 
 # Example 12: Looping through a tuple
 for item in my_tuple:
-    print("Tuple item:", item)
+    print("Tuple item:", item) # o/p => Tuple item: 10 Tuple item: 20 Tuple item: 30 Tuple item: Python Tuple item: 25.5
 
 print("\n======== 4. Differences Summary ========\n")
 print("List: Mutable, many methods, uses []")
@@ -79,6 +82,6 @@ print("Tuple: Immutable, limited methods, uses ()")
 
 # Bonus: Conversion between list and tuple
 converted_tuple = tuple(my_list)
-print("List to tuple:", converted_tuple)
+print("List to tuple:", converted_tuple) # o/p => List to tuple: (10, 20, 30, 'Python', 25.5)
 converted_list = list(my_tuple)
-print("Tuple to list:", converted_list)
+print("Tuple to list:", converted_list) # o/p => Tuple to list: [10, 20, 30, 'Python', 25.5]

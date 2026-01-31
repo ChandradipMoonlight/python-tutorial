@@ -3,11 +3,11 @@
 
 color = input("color : ");
 
-if(color.casefold == "green"):
+if(color.casefold() == "green"): # 
     print("GO");
-elif(color=="yellow"):
+elif(color.casefold()=="yellow"):
     print("LOOK");
-elif(color=="red"):
+elif(color.casefold()=="red"):
     print("STOP");
 else:
     print("traffic light is broken");

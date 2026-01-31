@@ -84,7 +84,7 @@ print("Copied list:", copy_list)
 squares = [x ** 2 for x in range(5)]
 evens = [x for x in range(10) if x % 2 == 0]
 nested = [[1, 2], [3, 4]]
-flat = [y for x in nested for y in x]
+flat = [y for x in nested for y in x] # o/p => List comprehensions: [0, 1, 4, 9, 16] [0, 2, 4, 6, 8] [1, 2, 3, 4]
 print("List comprehensions:", squares, evens, flat)
 # Output: List comprehensions: [0, 1, 4, 9, 16] [0, 2, 4, 6, 8] [1, 2, 3, 4]
 
@@ -93,7 +93,7 @@ matrix = [
     [1, 2, 3],
     [4, 5, 6]
 ]
-print("Matrix[1][2]:", matrix[1][2])
+print("Matrix[1][2]:", matrix[1][2]) # o/p => Matrix[1][2]: 6, matrix[row][column]
 # Output: Matrix[1][2]: 6
 
 # Copy vs deepcopy
@@ -184,6 +184,13 @@ diffs = [
 for d in diffs:
     print("-", d)
 # Output: listed points showing differences
+# - Lists: mutable, Tuples: immutable
+# - Lists use [], Tuples use ()
+# - Tuples can be used as dictionary keys, Lists cannot
+# - Tuples have only count() and index() methods
+# - Lists have many built-in methods
+# - Tuples are faster for iteration and memory efficient
+
 
 print("\n===== 4. Conversion and Advanced Concepts =====\n")
 
@@ -223,13 +230,16 @@ def mutable_default_test(arg=[]):
 
 print("Mutable default call 1:", mutable_default_test())
 print("Mutable default call 2:", mutable_default_test())
+print("Mutable default call 3:", mutable_default_test())
 # Output:
-# Mutable default call 1: [1]
-# Mutable default call 2: [1, 1]
+# Mutable default call 1: [1] o/p => [1] because default argument is evaluated only once, so it is not affected by the subsequent calls
+# Mutable default call 2: [1, 1] o/p => [1, 1] because default argument is evaluated only once, so it is not affected by the subsequent calls
+# Mutable default call 3: [1, 1, 1] o/p => [1, 1, 1] because default argument is evaluated only once, so it is not affected by the subsequent calls
 
 # Tuple as dictionary key
+# Tuple can be used as dictionary key because it is immutable
 my_dict = {(1, 2): "tuple key", "string": "value"}
-print("Dict value for tuple key:", my_dict[(1, 2)])
+print("Dict value for tuple key:", my_dict[(1, 2)]) # o/p => Dict value for tuple key: tuple key
 # Output: Dict value for tuple key: tuple key
 
 print("\n=== End of file ===")

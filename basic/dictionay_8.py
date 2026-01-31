@@ -1,6 +1,5 @@
 # ===================================
 # Python Dictionaries - Concepts and Examples
-# Reference: Shradha Khapra YouTube + Official Docs
 # ===================================
 
 print("===== 1. What is a Dictionary? =====")
@@ -34,39 +33,35 @@ print("Updated dictionary:", my_dict)
 
 print("\n===== 4. Removing Items =====")
 my_dict.pop("is_student")  # Removes 'is_student' key
-print("After pop('is_student'):", my_dict)
+print("After pop('is_student'):", my_dict) # o/p => After pop('is_student'): {'name': 'Rahul', 'age': 26, 'marks': [85, 90, 92], 'city': 'Mumbai'}
 
-removed_value = my_dict.popitem()  # Removes last inserted item (as of Python 3.7+)
-print("After popitem():", my_dict)
-print("Removed item:", removed_value)
+removed_value = my_dict.popitem()  # Removes last inserted item (as of Python 3.7+) or error if dictionary is empty
+print("After popitem():", my_dict) # o/p => After popitem(): {'name': 'Rahul', 'age': 26, 'marks': [85, 90, 92]}
+print("Removed item:", removed_value) # o/p => Removed item: ('city', 'Mumbai')
 # Output:
 # After pop('is_student'): {'name': 'Rahul', 'age': 26, 'marks': [85, 90, 92], 'city': 'Mumbai'}
 # After popitem(): {'name': 'Rahul', 'age': 26, 'marks': [85, 90, 92]}
 # Removed item: ('city', 'Mumbai')
 
 print("\n===== 5. Keys, Values, and Items =====")
-print("Dictionary keys:", my_dict.keys())
-print("Dictionary values:", my_dict.values())
-print("Dictionary items:", my_dict.items())
-# Output:
-# Dictionary keys: dict_keys(['name', 'age', 'marks'])
-# Dictionary values: dict_values(['Rahul', 26, [85, 90, 92]])
-# Dictionary items: dict_items([('name', 'Rahul'), ('age', 26), ('marks', [85, 90, 92])])
+print("Dictionary keys:", my_dict.keys()) # o/p => Dictionary keys: dict_keys(['name', 'age', 'marks'])
+print("Dictionary values:", my_dict.values()) # o/p => Dictionary values: dict_values(['Rahul', 26, [85, 90, 92]])  keys and values are in same order
+print("Dictionary items:", my_dict.items()) # o/p => Dictionary items: dict_items([('name', 'Rahul'), ('age', 26), ('marks', [85, 90, 92])]) keys and values are in same order
 
 print("\n===== 6. Dictionary Methods =====")
 
 # Copying dictionary
 copied_dict = my_dict.copy()
 print("Copied dictionary:", copied_dict)
-
+# o/p => Copied dictionary: {'name': 'Rahul', 'age': 26, 'marks': [85, 90, 92]}
 # Clearing dictionary
 temp_dict = copied_dict.copy()
 temp_dict.clear()
 print("Cleared dictionary:", temp_dict)
-
+# o/p => Cleared dictionary: {}
 # Check membership for keys
-print("'name' in dictionary?", 'name' in my_dict)
-print("'Mumbai' in dictionary?", 'Mumbai' in my_dict)  # False, membership applies to keys only
+print("'name' in dictionary?", 'name' in my_dict) # o/p => 'name' in dictionary? True
+print("'Mumbai' in dictionary?", 'Mumbai' in my_dict)  # False, membership applies to keys only # o/p => 'Mumbai' in dictionary? False
 
 print("\n===== 7. Nested Dictionaries =====")
 nested_dict = {
@@ -80,14 +75,12 @@ nested_dict = {
     }
 }
 print("Nested dictionary:", nested_dict)
-
+# o/p => Nested dictionary: {'student1': {'name': 'Ankit', 'marks': {'math': 90, 'physics': 85}}, 'student2': {'name': 'Sneha', 'marks': {'math': 92, 'physics': 88}}}
 print("Student1 Math marks:", nested_dict["student1"]["marks"]["math"])
-# Output:
-# Nested dictionary: {'student1': {'name': 'Ankit', 'marks': {'math': 90, 'physics': 85}}, 'student2': {'name': 'Sneha', 'marks': {'math': 92, 'physics': 88}}}
-# Student1 Math marks: 90
+# o/p => Student1 Math marks: 90
 
 print("\n===== 8. Using get() method =====")
-print("Get 'name':", my_dict.get("name"))
+print("Get 'name':", my_dict.get("name")) # o/p => Get 'name': 
 print("Get 'city' (non-existing):", my_dict.get("city"))  # Returns None instead of error
 print("Get 'city' with default:", my_dict.get("city", "Not specified"))
 # Output:

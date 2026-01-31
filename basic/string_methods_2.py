@@ -13,14 +13,15 @@ print("character at position 0 = ", name[0]); # o/p => n
 #? 3. slice 
 #  str[startIndexIncluding : endIndexExcluding]
 #  str[startIndexIncluding : endIndexExcluding : numberOfStepsToBeSkip] numberOfStepsToBeSkip is optional by default it is 1
-stringSlice = name[2 : len(name)];
+stringSlice = name[2 : len(name)]; # o/p => oja or name[2:] or name[2: -1] are same
 print("String between 2 to end : ", stringSlice);
 
-stringSlice = name[0 : -1: 2]; # -1 mean last index of string o/p=> Po
-print("String between 0 to end with step 1", stringSlice)
+stringSlice = name[0 : -1: 2]; # -1 mean last index of string o/p=> Po or name[::2] or name[0::2] are same
+print("String between 0 to end with step 1", stringSlice) # o/p => Pj or name[0::2] are same
 
 # name[ : 3] is same as name[0 : 3]
 # name[2 : ] is same as name[2 : len(name)]
+# name[ : 3] is same as name[0 : 3]
 
 #? 4. str.endsWith("subString");
 # return true if string end with subString else return false
